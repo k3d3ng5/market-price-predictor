@@ -68,13 +68,13 @@ That is **eight to ten moving parts**. Each is reasonable on its own. Together t
 |---|---|---|---|
 | SP-01 | Confirm brief and track | Todo | |
 | SP-02 | Choose single client (ADR-019) | Todo | |
-| SP-03 | Repo and workspace set-up | Todo | |
-| SP-04 | Real vs. labelled demo data decision | Todo | |
-| SP-05 | Prisma schema + migration | Todo | |
-| SP-06 | Seed/import with source register | Todo | |
-| SP-07 | API endpoints | Todo | |
-| SP-08 | Domain logic + unit tests | Todo | |
-| SP-06b / SP-31 | Historical series ingestion + forecast engine backtest (ADR-021) | Todo | |
+| SP-03 | Repo and workspace set-up | **Done** | pnpm workspace, TS, .env.example; repo at github.com/k3d3ng5/market-price-predictor (private) |
+| SP-04 | Real vs. labelled demo data decision | **Done (demo)** | Labelled synthetic dataset seeded (PRD §7.6); real ingestion = SP-06b |
+| SP-05 | Prisma schema + migration | **Done** | packages/db/prisma/schema.prisma + init migration (SQLite) |
+| SP-06 | Seed/import with source register | **Done (demo)** | 312 labelled demo observations; real series pending SP-06b |
+| SP-07 | API endpoints | **Done (prices/forecast; auth no)** | Port 4000; latest/history/compare/sources/eligibility/backtest verified live |
+| SP-08 | Domain logic + unit tests | **Done** | 20/20 passing (units, trust/eligibility, forecast engine — T-01..T-06 core) |
+| SP-06b / SP-31 | Historical series ingestion + forecast engine backtest (ADR-021) | **Engine Done / Ingestion pending** | Engine: fourier_trend_2h_52 vs 3 baselines, rolling-origin, gated ranges; SP-06b = WFP/HDX CSV ingestion |
 | SP-09 → SP-14 | Client screens (incl. backtest demo panel — FR-F8) | Todo | |
 | SP-15 → SP-17 | Telegram bot | Todo | |
 | SP-18 | Better Auth email OTP | Todo | |

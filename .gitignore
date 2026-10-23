@@ -16,8 +16,8 @@ build/
 *.db
 *.db-journal
 
-# prisma client output
-packages/db/generated/
+# prisma client output (Prisma resolves `output` relative to schema.prisma)
+packages/db/prisma/generated/
 
 # OS / editor
 .DS_Store

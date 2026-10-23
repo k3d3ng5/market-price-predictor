@@ -1,8 +1,12 @@
-# ProducePrice Intelligence
+# Tomionce
 
-Market **price intelligence and predictor** for tomatoes and onions in Nigeria (Abuja/FCT first):
-verified, unit-normalised price records, market comparison, and **backtested forecasts** that are
-published only when they beat naive baselines on held-out data.
+Market **price intelligence and predictor** for tomatoes and onions in Nigeria: verified,
+unit-normalised price records, market comparison, and **backtested forecasts** published only
+when they beat naive baselines on held-out data.
+
+*Architecture stays internal as "ProducePrice"; "Tomionce" is the public brand (TOMato + ONion,
+one trusted engine). Tomato and onion are predicted **separately** — one model per commodity ×
+market pair — by the same execution engine. They are never traded/modelled as one "pair asset".*
 
 > Status: early build. Requirements live in [`docs/01_PRD_ProducePrice_v3.0.md`](docs/01_PRD_ProducePrice_v3.0.md),
 > schedule in [`docs/02_Implementation_Plan_v1.0.md`](docs/02_Implementation_Plan_v1.0.md),

@@ -2,7 +2,7 @@
   "name": "produceprice",
   "private": true,
   "version": "0.1.0",
-  "description": "ProducePrice Intelligence — tomato & onion market price platform and predictor for Nigeria",
+  "description": "Tomionce — tomato & onion market price platform and predictor for Nigeria (code name: produceprice)",
   "packageManager": "pnpm@9.15.0",
   "engines": {
     "node": ">=20"

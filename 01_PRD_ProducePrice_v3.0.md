@@ -1,9 +1,9 @@
 # PRODUCT REQUIREMENTS DOCUMENT (PRD)
-## TomionPrice (public brand of ProducePrice Intelligence) — Tomato & Onion Market Price Platform
+## Tomionce (public brand of ProducePrice Intelligence) — Tomato & Onion Market Price Platform
 
 | | |
 |---|---|
-| **Version** | 3.2 — supersedes PRD v3.1 (PWA-first client ADR-022; TomionPrice brand) |
+| **Version** | 3.2 — supersedes PRD v3.1 (PWA-first client ADR-022; Tomionce brand) |
 | **Date** | 22 October 2026 |
 | **Status** | Living document — see §0 for the update protocol |
 | **Companion files** | `02_Implementation_Plan_v1.0.md` (schedule and tasks) · `03_ADR_Log.md` (every architecture decision) |
@@ -45,7 +45,7 @@ This is a **living document set**. To stop it rotting:
 | 2.0 | 22 Oct 2026 | Personas, journeys, workflows, automation, data/forecast gate, phased plan, assistant rules |
 | **3.0** | 22 Oct 2026 | **Stack change**: TypeScript monorepo, Express + Prisma, Better Auth (email OTP via Gmail provider chain), Expo app, Next.js console, grammY bot, Groq chatbot, Paystack, Cloudflare Tunnel, local-first SQLite. **Scope tiers S/P/G** introduced. **NDPA privacy** (§8) and **AI governance** (§9) made binding requirements. Global-ready data model (§7). Capstone deadline reality reflected (Tier S). |
 | **3.1** | 23 Oct 2026 | **Forecast-first repositioning (ADR-021)**: the market price predictor is the headline capability, not a deferred feature. Forecast engine (baselines + rolling-origin backtest on historical open data, e.g., WFP market price series on HDX) moved into Tier S as a backtested prototype. Release gate (§5.6) unchanged; live publication still gated. Two-brain data architecture: historical open data trains the predictor; the reporter network keeps the latest prices fresh (§7.1). |
-| **3.2** | 23 Oct 2026 | **Single-client decision (ADR-022)**: Tier S client = **Next.js PWA** (installable, offline last-seen shell, text-first). Satisfies the long-open PWA requirement (§14 Q3). Expo app and Telegram bot move explicitly to Tier P/G. UI designed in Stitch (Google) and wired to the real API — no mock data in the shipped client. **Public brand = TomionPrice** (tomato + onion umbrella): tomato and onion remain **separate commodities**, each commodity × market pair predicted separately by the **one shared execution engine** (ADR-021). No tomato/onion "pair asset" exists: their ratio has no structural market force and is not modelled. Cross-market comparison stays within one commodity (FR-P3). |
+| **3.2** | 23 Oct 2026 | **Single-client decision (ADR-022)**: Tier S client = **Next.js PWA** (installable, offline last-seen shell, text-first). Satisfies the long-open PWA requirement (§14 Q3). Expo app and Telegram bot move explicitly to Tier P/G. UI designed in Stitch (Google) and wired to the real API — no mock data in the shipped client. **Public brand = Tomionce** (tomato + onion umbrella; concise, catchy): tomato and onion remain **separate commodities**, each commodity × market pair predicted separately by the **one shared execution engine** (ADR-021). No tomato/onion "pair asset" exists: their ratio has no structural market force and is not modelled. Cross-market comparison stays within one commodity (FR-P3). |
 
 ### 0.2 Stack changes vs. v2.0 (summary; reasons in ADRs)
 

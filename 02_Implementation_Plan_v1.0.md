@@ -1,5 +1,5 @@
 # IMPLEMENTATION PLAN
-## TomionPrice (public brand of ProducePrice Intelligence)
+## Tomionce (public brand of ProducePrice Intelligence)
 
 | | |
 |---|---|

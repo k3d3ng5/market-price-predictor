@@ -11,6 +11,7 @@ import {
   convertToPerKg,
   freshness,
   gatedForecast,
+  marketDisplay,
   rollingOriginBacktest,
   type SeriesPoint,
   type Unit,
@@ -100,7 +101,10 @@ app.get("/v1/prices/latest", async (req: Request, res: Response) => {
   });
   res.json({
     commodity: { id: obs.commodity.id, name: obs.commodity.name },
-    market: { id: obs.market.id, name: obs.market.name },
+    market: {
+      id: obs.market.id,
+      name: marketDisplay(obs.market.name, obs.market.state),
+    },
     price: card,
     pricePerKgMinor: perKg.ok ? perKg.pricePerKgMinor : null,
     perKgBlockedReason: perKg.ok ? null : perKg.reason,
@@ -176,8 +180,8 @@ app.get("/v1/prices/compare", async (req: Request, res: Response) => {
   });
   res.json({
     commodity: commodityId,
-    market_a: obsA.market.name,
-    market_b: obsB.market.name,
+    market_a: marketDisplay(obsA.market.name, obsA.market.state),
+    market_b: marketDisplay(obsB.market.name, obsB.market.state),
     comparable: comparison.comparable,
     reason: comparison.comparable ? null : comparison.reason,
     percentDifference: comparison.comparable ? comparison.percentDifference : null,
@@ -241,7 +245,7 @@ app.get("/v1/forecast/backtest", async (req: Request, res: Response) => {
   const horizon = Math.min(Math.max(Number(req.query.horizon ?? 4), 1), 12);
   const series = await perKgSeries(commodityId, marketId);
   const marketRow = await db.market.findUnique({ where: { id: marketId } });
-  const marketName = marketRow?.name ?? marketId;
+  const marketName = marketRow ? marketDisplay(marketRow.name, marketRow.state) : marketId;
   const commodityRow = await db.commodity.findUnique({ where: { id: commodityId } });
   const commodityName = commodityRow?.name ?? commodityId;
   if (series.length < 30) {

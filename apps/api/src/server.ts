@@ -240,6 +240,10 @@ app.get("/v1/forecast/backtest", async (req: Request, res: Response) => {
   const marketId = String(req.query.market ?? "wuse");
   const horizon = Math.min(Math.max(Number(req.query.horizon ?? 4), 1), 12);
   const series = await perKgSeries(commodityId, marketId);
+  const marketRow = await db.market.findUnique({ where: { id: marketId } });
+  const marketName = marketRow?.name ?? marketId;
+  const commodityRow = await db.commodity.findUnique({ where: { id: commodityId } });
+  const commodityName = commodityRow?.name ?? commodityId;
   if (series.length < 30) {
     res.status(409).json({
       error: "insufficient_history",
@@ -249,7 +253,7 @@ app.get("/v1/forecast/backtest", async (req: Request, res: Response) => {
     });
     return;
   }
-  const cacheKey = `${commodityId}:${marketId}:${horizon}:${series.length}:${series[series.length - 1]?.observedAt}`;
+  const cacheKey = `wfpbt:${commodityId}:${marketId}:${horizon}:${series.length}:${series[series.length - 1]?.observedAt}`;
   if (backtestCache?.key === cacheKey) {
     res.json(backtestCache.result);
     return;
@@ -258,15 +262,17 @@ app.get("/v1/forecast/backtest", async (req: Request, res: Response) => {
   const gate = gatedForecast(series, backtest);
   const result = {
     commodity: commodityId,
+    commodityName,
     market: marketId,
+    marketName,
     horizonSteps: horizon,
     seriesLength: series.length,
     backtest,
     predictiveGate: gate,
     // FR-F5: display copy — range + reliability, never a promise.
     displayLine: gate.publishable
-      ? `Expected ${marketId} ${commodityId} price next period: ₦${(gate.centralPerKgMinor! / 100).toLocaleString("en-NG")} per kg (range ₦${(gate.lowPerKgMinor! / 100).toLocaleString("en-NG")}–₦${(gate.highPerKgMinor! / 100).toLocaleString("en-NG")}). ${gate.reliability}`
-      : `Not available yet — ${gate.reasonCode === "does_not_beat_baseline" ? "no model beats the naive baseline on held-out data" : "insufficient backtest evidence"}.`,
+      ? `Expected next price in ${marketName}: ₦${(gate.centralPerKgMinor! / 100).toLocaleString("en-NG")} per kg of ${commodityName.toLowerCase()} (range ₦${(gate.lowPerKgMinor! / 100).toLocaleString("en-NG")}–₦${(gate.highPerKgMinor! / 100).toLocaleString("en-NG")}). ${gate.reliability}`
+      : `Not available yet — ${gate.reasonCode === "does_not_beat_baseline" ? "no model beats the naive baseline on held-out data for this pair" : "insufficient backtest evidence"}.`,
     dataNotice: DEMO_NOTICE,
   };
   backtestCache = { key: cacheKey, result };

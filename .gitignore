@@ -29,3 +29,6 @@ desktop.ini
 # logs
 *.log
 pnpm-debug.log*
+
+# raw downloaded data (reproducible via HDX; do not commit large CSVs)
+data/

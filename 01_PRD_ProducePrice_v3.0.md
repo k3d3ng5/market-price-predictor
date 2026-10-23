@@ -335,6 +335,8 @@ Raw (immutable files) → Staging → **Curated observations** (append-only) →
 ### 7.5 Source register (carried forward)
 NBS Selected Food Price Watch · World Bank Real Time Food Prices · Humanitarian Data Exchange · **Own reporter network** · NiMet · NIHSA · CBN · dataset-discovery sites (discovery only). A source's presence in the register does not mean it is downloaded, validated or licensed.
 
+> **Validated data finding (23 Oct 2026):** the ingested WFP Nigeria series (via HDX, CC BY-IGO) covers tomato/onion prices for **Borno, Yobe and Adamawa only — there is no WFP tomato/onion coverage for FCT/Abuja markets**. Abuja coverage at higher frequency therefore depends on the own reporter network (rung 1 of the vision ladder), which is precisely the wedge §1.1 describes.
+
 ### 7.6 Sprint data rule
 If validated real data cannot be loaded in time, use a **clearly labelled demonstration dataset**. It must be marked as such in the UI, the README and the video, and must never be described as real market data.
 

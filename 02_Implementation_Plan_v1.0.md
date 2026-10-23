@@ -19,6 +19,8 @@ TypeScript monorepo · Express API · Prisma · Better Auth (email OTP via Gmail
 
 That is **eight to ten moving parts**. Each is reasonable on its own. Together they are a multi-week build for one person. In the time you have, the plan below protects a **thin, honest, working slice** and documents the rest as roadmap.
 
+> **Validated data reality (ADR-021 test, 23 Oct 2026):** real WFP history exists for tomato/onion in Borno/Yobe/Adamawa (~2,368 observations ingested; some pairs run to 2026-09), but NOT for FCT/Abuja. The predictor's evidence comes from those northern market pairs; Abuja will lean on the reporter network at Tier P. Monthly WFP cadence also means horizons are months, not weeks — expect wide ranges and engines beating naive on only some pairs (verified: ~half of pairs). All of this is displayed honestly by the gate.
+
 ### A.2 The cut line (Tier S vs. everything else)
 
 | Build in the sprint (Tier S) | Document as roadmap (Tier P/G) |
@@ -74,7 +76,7 @@ That is **eight to ten moving parts**. Each is reasonable on its own. Together t
 | SP-06 | Seed/import with source register | **Done (demo)** | 312 labelled demo observations; real series pending SP-06b |
 | SP-07 | API endpoints | **Done (prices/forecast; auth no)** | Port 4000; latest/history/compare/sources/eligibility/backtest verified live |
 | SP-08 | Domain logic + unit tests | **Done** | 20/20 passing (units, trust/eligibility, forecast engine — T-01..T-06 core) |
-| SP-06b / SP-31 | Historical series ingestion + forecast engine backtest (ADR-021) | **Engine Done / Ingestion pending** | Engine: fourier_trend_2h_52 vs 3 baselines, rolling-origin, gated ranges; SP-06b = WFP/HDX CSV ingestion |
+| SP-06b / SP-31 | Historical series ingestion + forecast engine backtest (ADR-021) | **Done (real data)** | WFP Nigeria price ingestion: 2,368 real observations, 37 commodity×market pairs (Borno/Yobe/Adamawa), unit-parsed kg conversion, idempotent; engine verified on real series via `/v1/forecast/backtest` |
 | SP-09 → SP-14 | Client screens (incl. backtest demo panel — FR-F8) | Todo | |
 | SP-15 → SP-17 | Telegram bot | Todo | |
 | SP-18 | Better Auth email OTP | Todo | |

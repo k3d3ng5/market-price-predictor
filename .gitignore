@@ -30,5 +30,11 @@ desktop.ini
 *.log
 pnpm-debug.log*
 
+# npm lockfile from the local npm workaround (workspace manager is pnpm)
+apps/web/package-lock.json
+
+# TypeScript incremental build info
+*.tsbuildinfo
+
 # raw downloaded data (reproducible via HDX; do not commit large CSVs)
 data/

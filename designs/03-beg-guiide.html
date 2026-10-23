@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container": "#eaedff", "on-surface": "#131b2e", "tertiary-fixed-dim": "#73dc82", "on-error": "#ffffff", "on-background": "#131b2e", "on-secondary-container": "#663500", "surface-bright": "#faf8ff", "outline": "#6f7a6f", "on-surface-variant": "#3f4940", "surface-container-high": "#e2e7ff", "on-tertiary-fixed-variant": "#00531e", "on-primary-fixed": "#00210c", "on-tertiary-container": "#8ef89a", "on-secondary-fixed": "#2f1500", "primary-fixed": "#9ef6b2", "on-secondary-fixed-variant": "#6e3900", "surface": "#faf8ff", "primary-fixed-dim": "#82d998", "secondary-container": "#fe932c", "on-error-container": "#93000a", "on-primary-container": "#9df5b2", "secondary-fixed": "#ffdcc3", "surface-tint": "#0a6d38", "error": "#ba1a1a", "secondary-fixed-dim": "#ffb77d", "surface-container-highest": "#dae2fd", "surface-container-lowest": "#ffffff", "background": "#faf8ff", "tertiary": "#005920", "inverse-on-surface": "#eef0ff", "surface-container-low": "#f2f3ff", "on-primary": "#ffffff", "primary": "#00592b", "tertiary-container": "#00742d", "on-tertiary-fixed": "#002108", "on-primary-fixed-variant": "#005227", "inverse-surface": "#283044", "surface-variant": "#dae2fd", "secondary": "#904d00", "on-tertiary": "#ffffff", "on-secondary": "#ffffff", "error-container": "#ffdad6", "inverse-primary": "#82d998", "primary-container": "#16733d", "tertiary-fixed": "#8ffa9b", "outline-variant": "#bfc9bd", "surface-dim": "#d2d9f4" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter-tablet": "1rem", "gutter": "0.75rem", "space-lg": "1rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "margin-tablet": "1.5rem", "margin": "1rem", "space-xl": "1.5rem", "space-md": "0.75rem" }, "fontFamily": { "label-numeric-md": ["JetBrains Mono"], "headline-lg-mobile": ["Inter"], "body-md": ["Inter"], "label-ui": ["Inter"], "body-sm": ["Inter"], "headline-lg": ["Inter"], "label-numeric-sm": ["JetBrains Mono"], "headline-md": ["Inter"], "body-lg": ["Inter"], "label-numeric-lg": ["JetBrains Mono"], "headline-sm": ["Inter"] }, "fontSize": { "label-numeric-md": ["14px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "500" }], "headline-lg-mobile": ["26px", { "lineHeight": "32px", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "label-ui": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }], "label-numeric-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500" }], "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "label-numeric-lg": ["20px", { "lineHeight": "24px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }] } } } };</script><style>@layer base { html, body { width: 100%; margin: 0; padding: 0; } body { overscroll-behavior-y: none; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-full selection:bg-primary-fixed"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-14 px-margin flex items-center justify-between"><div class="flex items-center gap-space-xs"><button aria-label="Go back" class="w-11 h-11 -ml-2 flex items-center justify-center text-on-surface active:bg-surface-container-high rounded-full transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[22px]">arrow_back</span></button><img alt="Tomionce Duo Logo" class="h-7 w-auto object-contain hidden xs:block" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAV52P163tSOLmBDdURmAYWhsk0oKJGPBGyALIrvN98m78tfnSwNgeF6Ti4GSt5BOelSPTurWCRuNClx2cSJFXT1MtBGcx4R37GwBMhRy6ccPIQ0TLGBiZPqySwf68eHtBg5wpjc49a-XkyBsn56e8ljgwELUn0Gq41nneV25XXg5n8_960Y-xxvNfH1GfH2x-hheXk89_PIu-Hd0es6gyYml5c8a9xhYyEb60DMrqiHpJOEy6CuX1y"/><div class="flex flex-col leading-none ml-1"><h1 class="font-headline-sm text-headline-sm text-on-surface truncate max-w-[170px]">Beginner Guide</h1><span class="font-label-ui text-[10px] text-on-surface-variant">ProducePrice</span></div></div><div class="flex items-center gap-space-sm"><div class="flex items-center gap-1.5 px-2 py-1 rounded-full bg-surface-container-low text-on-surface-variant font-label-numeric-sm text-label-numeric-sm" title="Network Sync Status"><span class="inline-flex rounded-full h-2 w-2 bg-primary"></span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-14 bg-surface min-h-[calc(100vh-3.5rem)]"><div class="flex flex-col w-full pb-safe">
+<!-- Top Navigation & Skip Bar -->
+<div class="px-margin pt-space-md flex items-center justify-between">
+<div class="flex items-center gap-space-xs bg-surface-container px-3 py-1.5 rounded-full">
+<span class="material-symbols-outlined text-primary text-[18px]">school</span>
+<span class="font-label-ui text-label-ui text-on-surface-variant uppercase tracking-wider">Quick Start Guide</span>
+</div>
+<button class="h-11 px-3 flex items-center justify-center font-label-ui text-label-ui text-secondary font-semibold active:opacity-60 transition-opacity" id="skipBtn">
+      Skip guide
+    </button>
+</div>
+<!-- Carousel Area -->
+<div class="relative w-full overflow-hidden mt-space-sm">
+<div class="flex transition-transform duration-300 ease-out w-full" id="cardsSlider">
+<!-- STEP 1: Price Card Anatomy -->
+<div class="w-full shrink-0 px-margin flex flex-col">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-numeric-sm text-label-numeric-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-medium">STEP 1 OF 4</span>
+<span class="material-symbols-outlined text-primary-container text-[20px]">payments</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Understand every Kobo</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Verified pricing per standard metric units without guesswork. Inspect wholesale baselines calibrated by bag, crate, or kilogram across dynamic hub corridors.
+          </p>
+<!-- Interactive UI Element Illustration -->
+<div class="mt-space-xs bg-surface-container-low rounded-xl p-space-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-ui text-label-ui text-on-surface font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[16px]">verified</span>
+                Plum Tomatoes (Derica / 50kg)
+              </span>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-numeric-sm text-label-numeric-sm">Mile 12 Lagos</span>
+</div>
+<!-- Price Highlight Area with Callout Pins -->
+<div class="relative bg-surface-container-lowest p-space-md rounded-lg flex flex-col gap-1 shadow-sm">
+<div class="flex items-baseline justify-between">
+<div class="flex items-baseline gap-1">
+<span class="font-label-numeric-lg text-label-numeric-lg text-primary font-bold">₦48,500</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">/ 50kg bag</span>
+</div>
+<div class="flex items-center gap-0.5 px-2 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-numeric-sm text-label-numeric-sm">
+<span>▲ +4.2%</span>
+</div>
+</div>
+<!-- Interactive Callout Pill -->
+<div class="mt-space-xs pt-space-xs flex items-center gap-2">
+<span class="h-2 w-2 rounded-full bg-secondary-container"></span>
+<span class="font-body-sm text-body-sm text-on-surface">Standard Unit Normalization: <strong>₦970 / kg</strong></span>
+</div>
+</div>
+<div class="bg-primary/10 rounded-lg p-2 flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0">touch_app</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+<strong>Anatomy tip:</strong> All listed prices are weighed at depot scales. Tap any price block to convert metric tons to customary retail units.
+              </p>
+</div>
+</div>
+</div>
+</div>
+<!-- STEP 2: Trust Chips -->
+<div class="w-full shrink-0 px-margin flex flex-col">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-numeric-sm text-label-numeric-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-medium">STEP 2 OF 4</span>
+<span class="material-symbols-outlined text-primary-container text-[20px]">verified_user</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Official vs crowd reports</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            See verified sources like WFP, FEWS NET, and HDX instantly. Look for the ledger green seal before closing bulk transactions or forward contracts.
+          </p>
+<!-- Interactive UI Element Illustration -->
+<div class="mt-space-xs bg-surface-container-low rounded-xl p-space-sm flex flex-col gap-space-sm">
+<!-- Chip 1: Verified Official -->
+<div class="bg-surface-container-lowest p-3 rounded-lg flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+</div>
+<div>
+<div class="font-label-ui text-label-ui text-on-surface font-bold">WFP VAM &amp; HDX Verified</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Institutional market surveillance survey</div>
+</div>
+</div>
+<span class="px-2 py-1 rounded bg-primary text-on-primary font-label-numeric-sm text-label-numeric-sm font-semibold">Tier 1</span>
+</div>
+<!-- Chip 2: Aggregated Local Market -->
+<div class="bg-surface-container-lowest p-3 rounded-lg flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">storefront</span>
+</div>
+<div>
+<div class="font-label-ui text-label-ui text-on-surface font-bold">Dawanau Grain Union</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Daily ledger record from local weighmasters</div>
+</div>
+</div>
+<span class="px-2 py-1 rounded bg-surface-container text-on-surface font-label-numeric-sm text-label-numeric-sm font-semibold">Verified</span>
+</div>
+<div class="bg-primary/10 rounded-lg p-2 flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0">policy</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Look for the green <strong>Tier 1</strong> badge to avoid speculative price inflation reported in unverified chat groups.
+              </p>
+</div>
+</div>
+</div>
+</div>
+<!-- STEP 3: Forecast Evidence -->
+<div class="w-full shrink-0 px-margin flex flex-col">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-numeric-sm text-label-numeric-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-medium">STEP 3 OF 4</span>
+<span class="material-symbols-outlined text-primary-container text-[20px]">trending_up</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Trend evidence &amp; baselines</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Data-backed price trajectories with clear historical baselines. Compare current spot rates against 3-year seasonal harvest shifts before loading trucks.
+          </p>
+<!-- Interactive Chart Card Illustration -->
+<div class="mt-space-xs bg-surface-container-low rounded-xl p-space-sm flex flex-col gap-space-sm">
+<div class="bg-surface-container-lowest rounded-lg p-3 shadow-sm flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div>
+<div class="font-label-ui text-label-ui text-on-surface font-semibold">Dry White Maize (100kg)</div>
+<div class="font-label-numeric-sm text-label-numeric-sm text-primary">Trajectory: Moderate Rise (+8%)</div>
+</div>
+<div class="flex items-center gap-1 bg-surface-container px-2 py-1 rounded font-label-numeric-sm text-label-numeric-sm text-on-surface">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+                  90-Day Range
+                </div>
+</div>
+<!-- Inline Lightweight SVG Sparkline Chart -->
+<div class="w-full h-20 pt-2">
+<svg class="w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 300 70">
+<!-- Baseline Area -->
+<path d="M0,55 L40,50 L80,52 L120,40 L160,42 L200,32 L240,25 L300,15 L300,70 L0,70 Z" fill="rgba(22, 115, 61, 0.08)"></path>
+<!-- Trend Line -->
+<path d="M0,55 L40,50 L80,52 L120,40 L160,42 L200,32 L240,25 L300,15" fill="none" stroke="#16733D" stroke-linecap="round" stroke-width="3"></path>
+<!-- Historical Average Line (Dashed) -->
+<path d="M0,48 L300,48" fill="none" stroke="#94A3B8" stroke-dasharray="4 4" stroke-width="1.5"></path>
+<!-- Current Data Pin -->
+<circle cx="300" cy="15" fill="#16733D" r="4.5"></circle>
+</svg>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-numeric-sm text-label-numeric-sm text-on-surface-variant">Oct '23 Baseline</span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-on-surface font-semibold">Today: ₦54,000</span>
+</div>
+</div>
+<div class="bg-primary/10 rounded-lg p-2 flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0">insights</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Dashed gray line marks 5-year average seasonal inflation. Trajectories above it signal rapid procurement tightening.
+              </p>
+</div>
+</div>
+</div>
+</div>
+<!-- STEP 4: Stale & Offline Badges -->
+<div class="w-full shrink-0 px-margin flex flex-col">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-numeric-sm text-label-numeric-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-medium">STEP 4 OF 4</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">wifi_off</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Always know freshness</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Never mistake yesterday’s price for today’s market rate. Visual freshness badges flag data collected beyond the live morning clearing session.
+          </p>
+<!-- Interactive Freshness Badges -->
+<div class="mt-space-xs bg-surface-container-low rounded-xl p-space-sm flex flex-col gap-space-sm">
+<!-- Warning Badge: Stale Indicator -->
+<div class="bg-surface-container-lowest p-3 rounded-lg flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-secondary shrink-0"></span>
+<div>
+<div class="font-label-ui text-label-ui text-on-surface font-bold">Stale: Updated 26h ago</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Sapele Fish Market - Awaiting morning dispatch</div>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-label-numeric-sm text-label-numeric-sm font-semibold">Caution</span>
+</div>
+<!-- Warning Badge: Offline Cache -->
+<div class="bg-surface-container-lowest p-3 rounded-lg flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-outline shrink-0"></span>
+<div>
+<div class="font-label-ui text-label-ui text-on-surface font-bold">Cached Offline Ledger</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Last synced via SMS / Satellite relay at 06:30</div>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-label-numeric-sm text-label-numeric-sm font-semibold">Local Storage</span>
+</div>
+<div class="bg-secondary-fixed/50 rounded-lg p-2 flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0">hourglass_bottom</span>
+<p class="font-body-sm text-body-sm text-on-surface">
+                If cellular networks drop in transit, cached records display a clear mono timestamp so drivers never barter on outdated data.
+              </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Interactive Flow Controls -->
+<div class="px-margin mt-space-md flex flex-col gap-space-md">
+<!-- Step Dots & Progress Label -->
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-2" id="stepDotsContainer">
+<span class="step-dot h-2.5 w-7 rounded-full bg-primary transition-all duration-300"></span>
+<span class="step-dot h-2.5 w-2.5 rounded-full bg-surface-variant transition-all duration-300"></span>
+<span class="step-dot h-2.5 w-2.5 rounded-full bg-surface-variant transition-all duration-300"></span>
+<span class="step-dot h-2.5 w-2.5 rounded-full bg-surface-variant transition-all duration-300"></span>
+</div>
+<span class="font-label-numeric-md text-label-numeric-md text-on-surface-variant font-medium" id="stepCounterLabel">Step 1 of 4</span>
+</div>
+<!-- Main Navigation Actions -->
+<div class="flex items-center gap-space-sm pt-space-xs">
+<button aria-label="Previous step" class="hidden h-12 w-12 rounded-lg bg-surface-container flex items-center justify-center text-on-surface active:bg-surface-container-high transition-colors" id="prevBtn">
+<span class="material-symbols-outlined text-[20px]">chevron_left</span>
+</button>
+<button class="flex-1 h-12 rounded-lg bg-primary text-on-primary font-headline-sm text-headline-sm flex items-center justify-center gap-2 active:bg-primary-container transition-colors shadow-sm" id="nextBtn">
+<span>Next</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+<!-- Revisit Hint for Confidence -->
+<div class="flex items-center justify-center gap-1.5 py-1">
+<span class="material-symbols-outlined text-on-surface-variant text-[16px]">help_outline</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Tap the <strong class="text-on-surface font-semibold">? icon</strong> in the top bar anytime to replay.</span>
+</div>
+</div>
+</div>
+<script>
+  (function () {
+    const slider = document.getElementById('cardsSlider');
+    const dots = document.querySelectorAll('.step-dot');
+    const stepLabel = document.getElementById('stepCounterLabel');
+    const nextBtn = document.getElementById('nextBtn');
+    const prevBtn = document.getElementById('prevBtn');
+    const skipBtn = document.getElementById('skipBtn');
+
+    let currentStep = 0;
+    const totalSteps = 4;
+
+    function updateStep(step) {
+      currentStep = step;
+      slider.style.transform = `translateX(-${currentStep * 100}%)`;
+
+      // Update dots width and color
+      dots.forEach((dot, index) => {
+        if (index === currentStep) {
+          dot.classList.remove('w-2.5', 'bg-surface-variant');
+          dot.classList.add('w-7', 'bg-primary');
+        } else {
+          dot.classList.remove('w-7', 'bg-primary');
+          dot.classList.add('w-2.5', 'bg-surface-variant');
+        }
+      });
+
+      // Update label
+      stepLabel.textContent = `Step ${currentStep + 1} of ${totalSteps}`;
+
+      // Update Back Button visibility
+      if (currentStep > 0) {
+        prevBtn.classList.remove('hidden');
+      } else {
+        prevBtn.classList.add('hidden');
+      }
+
+      // Update CTA text on final slide
+      if (currentStep === totalSteps - 1) {
+        nextBtn.innerHTML = `<span>Got it, show prices</span><span class="material-symbols-outlined text-[20px]">check</span>`;
+      } else {
+        nextBtn.innerHTML = `<span>Next</span><span class="material-symbols-outlined text-[20px]">arrow_forward</span>`;
+      }
+    }
+
+    function finishGuide() {
+      try {
+        localStorage.setItem('produceprice_guide_seen', 'true');
+      } catch (e) {}
+      
+      // Feedback pulse & fallback redirect/navigation
+      nextBtn.classList.add('opacity-75');
+      setTimeout(() => {
+        if (window.history.length > 1) {
+          window.history.back();
+        } else {
+          window.location.reload();
+        }
+      }, 150);
+    }
+
+    nextBtn.addEventListener('click', () => {
+      if (currentStep < totalSteps - 1) {
+        updateStep(currentStep + 1);
+      } else {
+        finishGuide();
+      }
+    });
+
+    prevBtn.addEventListener('click', () => {
+      if (currentStep > 0) {
+        updateStep(currentStep - 1);
+      }
+    });
+
+    skipBtn.addEventListener('click', () => {
+      finishGuide();
+    });
+
+    // Touch swipe gesture support for absolute beginners
+    let startX = 0;
+    let endX = 0;
+
+    slider.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+    }, { passive: true });
+
+    slider.addEventListener('touchend', (e) => {
+      endX = e.changedTouches[0].clientX;
+      const diff = startX - endX;
+      if (Math.abs(diff) > 40) {
+        if (diff > 0 && currentStep < totalSteps - 1) {
+          updateStep(currentStep + 1);
+        } else if (diff < 0 && currentStep > 0) {
+          updateStep(currentStep - 1);
+        }
+      }
+    }, { passive: true });
+  })();
+</script></main></body></html>

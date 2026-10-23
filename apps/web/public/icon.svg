@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Tomionce">
+  <rect width="512" height="512" fill="#00592b"/>
+  <circle cx="256" cy="292" r="136" fill="#fe932c"/>
+  <ellipse cx="214" cy="252" rx="46" ry="30" fill="#ffdcc3" opacity="0.55"/>
+  <rect x="246" y="116" width="20" height="70" rx="10" fill="#005920"/>
+  <ellipse cx="204" cy="158" rx="56" ry="24" fill="#73dc82" transform="rotate(-18 204 158)"/>
+  <ellipse cx="308" cy="158" rx="56" ry="24" fill="#8ffa9b" transform="rotate(18 308 158)"/>
+  <circle cx="256" cy="292" r="136" fill="none" stroke="#9ef6b2" stroke-width="8" opacity="0.5"/>
+</svg>

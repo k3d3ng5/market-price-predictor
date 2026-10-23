@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container": "#eaedff", "on-surface": "#131b2e", "tertiary-fixed-dim": "#73dc82", "on-error": "#ffffff", "on-background": "#131b2e", "on-secondary-container": "#663500", "surface-bright": "#faf8ff", "outline": "#6f7a6f", "on-surface-variant": "#3f4940", "surface-container-high": "#e2e7ff", "on-tertiary-fixed-variant": "#00531e", "on-primary-fixed": "#00210c", "on-tertiary-container": "#8ef89a", "on-secondary-fixed": "#2f1500", "primary-fixed": "#9ef6b2", "on-secondary-fixed-variant": "#6e3900", "surface": "#faf8ff", "primary-fixed-dim": "#82d998", "secondary-container": "#fe932c", "on-error-container": "#93000a", "on-primary-container": "#9df5b2", "secondary-fixed": "#ffdcc3", "surface-tint": "#0a6d38", "error": "#ba1a1a", "secondary-fixed-dim": "#ffb77d", "surface-container-highest": "#dae2fd", "surface-container-lowest": "#ffffff", "background": "#faf8ff", "tertiary": "#005920", "inverse-on-surface": "#eef0ff", "surface-container-low": "#f2f3ff", "on-primary": "#ffffff", "primary": "#00592b", "tertiary-container": "#00742d", "on-tertiary-fixed": "#002108", "on-primary-fixed-variant": "#005227", "inverse-surface": "#283044", "surface-variant": "#dae2fd", "secondary": "#904d00", "on-secondary": "#ffffff", "error-container": "#ffdad6", "inverse-primary": "#82d998", "primary-container": "#16733d", "tertiary-fixed": "#8ffa9b", "outline-variant": "#bfc9bd", "surface-dim": "#d2d9f4" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter-tablet": "1rem", "gutter": "0.75rem", "space-lg": "1rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "margin-tablet": "1.5rem", "margin": "1rem", "space-xl": "1.5rem", "space-md": "0.75rem" }, "fontFamily": { "label-numeric-md": ["JetBrains Mono"], "headline-lg-mobile": ["Inter"], "body-md": ["Inter"], "label-ui": ["Inter"], "body-sm": ["Inter"], "headline-lg": ["Inter"], "label-numeric-sm": ["JetBrains Mono"], "headline-md": ["Inter"], "body-lg": ["Inter"], "label-numeric-lg": ["JetBrains Mono"], "headline-sm": ["Inter"] }, "fontSize": { "label-numeric-md": ["14px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "500" }], "headline-lg-mobile": ["26px", { "lineHeight": "32px", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "label-ui": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }], "label-numeric-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500" }], "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "label-numeric-lg": ["20px", { "lineHeight": "24px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }] } } } };</script><style>@layer base { html, body { width: 100%; margin: 0; padding: 0; } body { overscroll-behavior-y: none; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-full selection:bg-primary-fixed"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-14 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="Tomionce Duo Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAV52P163tSOLmBDdURmAYWhsk0oKJGPBGyALIrvN98m78tfnSwNgeF6Ti4GSt5BOelSPTurWCRuNClx2cSJFXT1MtBGcx4R37GwBMhRy6ccPIQ0TLGBiZPqySwf68eHtBg5wpjc49a-XkyBsn56e8ljgwELUn0Gq41nneV25XXg5n8_960Y-xxvNfH1GfH2x-hheXk89_PIu-Hd0es6gyYml5c8a9xhYyEb60DMrqiHpJOEy6CuX1y"/><div class="flex flex-col leading-none"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">ProducePrice</span><span class="font-label-ui text-label-ui text-on-surface-variant font-medium tracking-normal">by Tomionce</span></div><a aria-label="Help &amp; Beginner Guide" class="w-11 h-11 flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors ml-space-xs" data-path="beginner-guide" href="#"><span class="material-symbols-outlined text-[20px]">help_outline</span></a></div><div class="flex items-center gap-space-sm"><div class="flex items-center gap-1.5 px-2 py-1 rounded-full bg-surface-container-low text-on-surface-variant font-label-numeric-sm text-label-numeric-sm select-none" title="System Status: Live Online"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span></span><span class="hidden xs:inline font-medium uppercase tracking-wider text-[10px]">Sync</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-14 pb-20 bg-surface min-h-[calc(100vh-3.5rem)]"><div class="flex flex-col w-full pb-4">
+<!-- 1. Data-notice ribbon (dismissible conditional alert strip) -->
+<div class="bg-secondary-fixed text-on-secondary-fixed px-margin py-2 flex items-center justify-between gap-space-sm shadow-sm transition-all duration-300" id="notice-strip">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="material-symbols-outlined text-[16px] text-secondary flex-shrink-0">info</span>
+<span class="font-body-sm text-body-sm leading-tight truncate">Partly demonstration data right now — every real source is labelled.</span>
+</div>
+<button aria-label="Dismiss notice" class="min-w-[28px] min-h-[28px] flex items-center justify-center text-on-secondary-fixed hover:text-secondary transition-colors" onclick="document.getElementById('notice-strip').classList.add('hidden')">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<div class="px-margin flex flex-col gap-space-md pt-space-md">
+<!-- 2. Segmented Control: [Tomatoes] & [Onions] -->
+<div class="bg-surface-container p-1 rounded-full flex items-center shadow-sm">
+<button class="flex-1 py-2 rounded-full font-label-ui text-label-ui text-center transition-all bg-primary-container text-on-primary shadow-sm font-semibold flex items-center justify-center gap-1.5" id="btn-tomatoes" onclick="toggleCommodity('tomatoes')">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">eco</span>
+        Tomatoes
+      </button>
+<button class="flex-1 py-2 rounded-full font-label-ui text-label-ui text-center transition-all text-on-surface hover:text-primary flex items-center justify-center gap-1.5 font-medium" id="btn-onions" onclick="toggleCommodity('onions')">
+<span class="material-symbols-outlined text-[16px]">psychiatry</span>
+        Onions
+      </button>
+</div>
+<!-- 3. Market selector row -->
+<div class="flex items-center justify-between bg-surface-container-low px-3.5 py-2 rounded-lg">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="material-symbols-outlined text-primary-container text-[18px] flex-shrink-0">location_on</span>
+<span class="font-label-ui text-label-ui text-on-surface truncate">Maiduguri (WFP)</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[16px]">expand_more</span>
+</div>
+<button class="font-label-ui text-label-ui text-primary hover:text-primary-container font-semibold transition-colors flex items-center gap-0.5 px-2 py-1 min-h-[32px]">
+        Change
+      </button>
+</div>
+<!-- 4. PRICE CARD (Hero high-emphasis operational ledger) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-md flex flex-col gap-space-sm">
+<!-- Line 1: Commodity + market -->
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1" id="card-commodity-meta">
+<span class="font-semibold text-on-surface">Tomatoes</span> · Maiduguri (WFP)
+        </span>
+<span class="font-label-numeric-sm text-label-numeric-sm bg-surface-container text-on-surface px-2 py-0.5 rounded-full font-medium">
+          NGN · Wholesale
+        </span>
+</div>
+<!-- Line 2: HUGE Price figure -->
+<div class="flex items-baseline gap-1.5 pt-1">
+<span class="font-headline-lg-mobile text-headline-lg-mobile font-headline-lg text-on-surface tracking-tight font-bold" id="hero-price">₦408.06</span>
+<span class="font-label-numeric-md text-label-numeric-md text-on-surface-variant font-medium" id="hero-unit">per 0.5 KG</span>
+</div>
+<!-- Line 3: Trust chip & Freshness warning chip -->
+<div class="flex flex-wrap items-center gap-1.5 pt-1">
+<!-- Trust badge -->
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-ui text-label-ui">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+          Official statistic
+        </span>
+<!-- Stale tag -->
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-numeric-sm text-label-numeric-sm">
+<span class="material-symbols-outlined text-[13px]">history</span>
+          stale · as at 15 Aug 2026
+        </span>
+</div>
+<!-- Line 4: Small muted grey caption / attribution -->
+<p class="font-body-sm text-body-sm text-on-surface-variant pt-1 leading-snug">
+        Source: WFP Nigeria Food Prices (HDX) · © CC BY-IGO
+      </p>
+<!-- Bottom row: Change indicator -->
+<div class="mt-2 pt-2 bg-surface-container-low rounded-lg p-2.5 flex items-center justify-between">
+<div class="flex items-center gap-1 text-primary-container font-label-numeric-md text-label-numeric-md">
+<span class="material-symbols-outlined text-[16px] font-bold">arrow_upward</span>
+<span class="font-semibold">vs previous observation</span>
+</div>
+<span class="font-label-numeric-sm text-label-numeric-sm text-on-surface-variant italic">
+          no fabricated % when history is missing
+        </span>
+</div>
+</div>
+<!-- 5. Secondary content / Recent Price Logs & Market Spot Feeds -->
+<div class="flex flex-col gap-2 pt-1">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface">Recent price logs</span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-on-surface-variant">Borno Hubs</span>
+</div>
+<!-- Log item 1 -->
+<div class="bg-surface-container-lowest p-3 rounded-lg shadow-sm flex items-center justify-between">
+<div class="flex flex-col min-w-0 pr-2">
+<div class="flex items-center gap-1.5">
+<span class="font-label-ui text-label-ui text-on-surface font-semibold truncate">Monday Market (Retail)</span>
+<span class="px-1.5 py-0.2 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-numeric-sm text-label-numeric-sm">Spot</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Verified via Merchant SMS · 2h ago</span>
+</div>
+<div class="flex flex-col items-end flex-shrink-0">
+<span class="font-label-numeric-md text-label-numeric-md text-on-surface font-semibold">₦450.00</span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-on-surface-variant">0.5 KG</span>
+</div>
+</div>
+<!-- Log item 2 -->
+<div class="bg-surface-container-lowest p-3 rounded-lg shadow-sm flex items-center justify-between">
+<div class="flex flex-col min-w-0 pr-2">
+<div class="flex items-center gap-1.5">
+<span class="font-label-ui text-label-ui text-on-surface font-semibold truncate">Baga Road Wholesale</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container text-on-surface-variant font-label-numeric-sm text-label-numeric-sm">WFP HDX</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Standard Basket · 12 Aug 2026</span>
+</div>
+<div class="flex flex-col items-end flex-shrink-0">
+<span class="font-label-numeric-md text-label-numeric-md text-on-surface font-semibold">₦395.40</span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-on-surface-variant">0.5 KG</span>
+</div>
+</div>
+<!-- Log item 3 -->
+<div class="bg-surface-container-lowest p-3 rounded-lg shadow-sm flex items-center justify-between">
+<div class="flex flex-col min-w-0 pr-2">
+<div class="flex items-center gap-1.5">
+<span class="font-label-ui text-label-ui text-on-surface font-semibold truncate">Customs Market Depot</span>
+<span class="px-1.5 py-0.2 rounded bg-secondary-fixed text-on-secondary-fixed font-label-numeric-sm text-label-numeric-sm">Crowd</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Unverified report · 14 Aug 2026</span>
+</div>
+<div class="flex flex-col items-end flex-shrink-0">
+<span class="font-label-numeric-md text-label-numeric-md text-on-surface font-semibold">₦415.00</span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-on-surface-variant">0.5 KG</span>
+</div>
+</div>
+</div>
+<!-- 6. Sticky mini-hint directly above the bottom nav (offline indicator bar) -->
+<div class="bg-inverse-surface text-inverse-on-surface px-4 py-2.5 flex items-center justify-between rounded-lg shadow-lg mt-2">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-[18px] text-secondary-container flex-shrink-0">cloud_off</span>
+<span class="font-body-sm text-body-sm truncate">Offline — showing last synced prices</span>
+</div>
+<button class="flex items-center gap-1 text-primary-fixed hover:text-white transition-colors font-label-ui text-label-ui font-semibold flex-shrink-0 pl-2" onclick="triggerSync(this)">
+<span class="material-symbols-outlined text-[15px] sync-icon">sync</span>
+<span>Sync now</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+  function toggleCommodity(type) {
+    const btnTom = document.getElementById('btn-tomatoes');
+    const btnOni = document.getElementById('btn-onions');
+    const meta = document.getElementById('card-commodity-meta');
+    const heroPrice = document.getElementById('hero-price');
+    const heroUnit = document.getElementById('hero-unit');
+
+    if (type === 'tomatoes') {
+      btnTom.className = 'flex-1 py-2 rounded-full font-label-ui text-label-ui text-center transition-all bg-primary-container text-on-primary shadow-sm font-semibold flex items-center justify-center gap-1.5';
+      btnOni.className = 'flex-1 py-2 rounded-full font-label-ui text-label-ui text-center transition-all text-on-surface hover:text-primary flex items-center justify-center gap-1.5 font-medium';
+      meta.innerHTML = '<span class="font-semibold text-on-surface">Tomatoes</span> · Maiduguri (WFP)';
+      heroPrice.textContent = '₦408.06';
+      heroUnit.textContent = 'per 0.5 KG';
+    } else {
+      btnOni.className = 'flex-1 py-2 rounded-full font-label-ui text-label-ui text-center transition-all bg-primary-container text-on-primary shadow-sm font-semibold flex items-center justify-center gap-1.5';
+      btnTom.className = 'flex-1 py-2 rounded-full font-label-ui text-label-ui text-center transition-all text-on-surface hover:text-primary flex items-center justify-center gap-1.5 font-medium';
+      meta.innerHTML = '<span class="font-semibold text-on-surface">Onions (Red)</span> · Maiduguri (WFP)';
+      heroPrice.textContent = '₦620.50';
+      heroUnit.textContent = 'per 1.0 KG';
+    }
+  }
+
+  function triggerSync(btn) {
+    const icon = btn.querySelector('.sync-icon');
+    if (icon) {
+      icon.classList.add('animate-spin');
+      setTimeout(() => {
+        icon.classList.remove('animate-spin');
+      }, 1200);
+    }
+  }
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.05)]" data-active-classes="text-primary-container font-headline-sm font-semibold"><div class="grid grid-cols-4 items-center h-16 px-space-xs max-w-md mx-auto"><a aria-current="page" class="flex flex-col items-center justify-center gap-0.5 min-w-[44px] min-h-[44px] transition-colors py-1 text-primary-container font-headline-sm font-semibold" data-path="prices" href="#"><span class="material-symbols-outlined text-[22px]">sell</span><span class="font-label-ui text-label-ui">Prices</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[44px] min-h-[44px] text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="forecast" href="#"><span class="material-symbols-outlined text-[22px]">trending_up</span><span class="font-label-ui text-label-ui">Forecast</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[44px] min-h-[44px] text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="compare" href="#"><span class="material-symbols-outlined text-[22px]">balance</span><span class="font-label-ui text-label-ui">Compare</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[44px] min-h-[44px] text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="sources" href="#"><span class="material-symbols-outlined text-[22px]">verified_user</span><span class="font-label-ui text-label-ui">Sources</span></a></div></nav></body></html>

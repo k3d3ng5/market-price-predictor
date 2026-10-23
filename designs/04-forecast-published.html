@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container": "#eaedff", "on-surface": "#131b2e", "tertiary-fixed-dim": "#73dc82", "on-error": "#ffffff", "on-background": "#131b2e", "on-secondary-container": "#663500", "surface-bright": "#faf8ff", "outline": "#6f7a6f", "on-surface-variant": "#3f4940", "surface-container-high": "#e2e7ff", "on-tertiary-fixed-variant": "#00531e", "on-primary-fixed": "#00210c", "on-tertiary-container": "#8ef89a", "on-secondary-fixed": "#2f1500", "primary-fixed": "#9ef6b2", "on-secondary-fixed-variant": "#6e3900", "surface": "#faf8ff", "primary-fixed-dim": "#82d998", "secondary-container": "#fe932c", "on-error-container": "#93000a", "on-primary-container": "#9df5b2", "secondary-fixed": "#ffdcc3", "surface-tint": "#0a6d38", "error": "#ba1a1a", "secondary-fixed-dim": "#ffb77d", "surface-container-highest": "#dae2fd", "surface-container-lowest": "#ffffff", "background": "#faf8ff", "tertiary": "#005920", "inverse-on-surface": "#eef0ff", "surface-container-low": "#f2f3ff", "on-primary": "#ffffff", "primary": "#00592b", "tertiary-container": "#00742d", "on-tertiary-fixed": "#002108", "on-primary-fixed-variant": "#005227", "inverse-surface": "#283044", "surface-variant": "#dae2fd", "secondary": "#904d00", "on-tertiary": "#ffffff", "on-secondary": "#ffffff", "error-container": "#ffdad6", "inverse-primary": "#82d998", "primary-container": "#16733d", "tertiary-fixed": "#8ffa9b", "outline-variant": "#bfc9bd", "surface-dim": "#d2d9f4" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter-tablet": "1rem", "gutter": "0.75rem", "space-lg": "1rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "margin-tablet": "1.5rem", "margin": "1rem", "space-xl": "1.5rem", "space-md": "0.75rem" }, "fontFamily": { "label-numeric-md": ["JetBrains Mono"], "headline-lg-mobile": ["Inter"], "body-md": ["Inter"], "label-ui": ["Inter"], "body-sm": ["Inter"], "headline-lg": ["Inter"], "label-numeric-sm": ["JetBrains Mono"], "headline-md": ["Inter"], "body-lg": ["Inter"], "label-numeric-lg": ["JetBrains Mono"], "headline-sm": ["Inter"] }, "fontSize": { "label-numeric-md": ["14px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "500" }], "headline-lg-mobile": ["26px", { "lineHeight": "32px", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "label-ui": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }], "label-numeric-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500" }], "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "label-numeric-lg": ["20px", { "lineHeight": "24px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }] } } } };</script><style>@layer base { html, body { width: 100%; margin: 0; padding: 0; } body { overscroll-behavior-y: none; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-full selection:bg-primary-fixed"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-14 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="Tomionce Duo Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAV52P163tSOLmBDdURmAYWhsk0oKJGPBGyALIrvN98m78tfnSwNgeF6Ti4GSt5BOelSPTurWCRuNClx2cSJFXT1MtBGcx4R37GwBMhRy6ccPIQ0TLGBiZPqySwf68eHtBg5wpjc49a-XkyBsn56e8ljgwELUn0Gq41nneV25XXg5n8_960Y-xxvNfH1GfH2x-hheXk89_PIu-Hd0es6gyYml5c8a9xhYyEb60DMrqiHpJOEy6CuX1y"/><div class="flex flex-col leading-tight"><div class="flex items-center gap-1.5"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Forecast</span><span class="hidden sm:inline-block font-label-ui text-label-ui text-on-surface-variant">· ProducePrice</span></div><span class="font-body-sm text-[11px] text-on-surface-variant tracking-normal">Backtested model — never a promise</span></div><a aria-label="Help &amp; Beginner Guide" class="w-11 h-11 flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors ml-space-xs" data-path="beginner-guide" href="#"><span class="material-symbols-outlined text-[20px]">help_outline</span></a></div><div class="flex items-center gap-space-sm"><div class="flex items-center gap-1.5 px-2 py-1 rounded-full bg-surface-container-low text-on-surface-variant font-label-numeric-sm text-label-numeric-sm select-none" title="System Status: Live Online"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span></span><span class="hidden xs:inline font-medium uppercase tracking-wider text-[10px]">Sync</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-14 pb-20 bg-surface min-h-[calc(100vh-3.5rem)]"><div class="flex flex-col w-full pb-8">
+<!-- Commodity & Market Controller Strip -->
+<section class="px-margin pt-space-md flex flex-col gap-space-sm">
+<!-- Commodity Segmented Switcher -->
+<div class="w-full bg-surface-container p-1 rounded-full flex items-center justify-between select-none">
+<button class="flex-1 py-2 px-3 rounded-full bg-surface-container-lowest shadow-sm flex items-center justify-center gap-1.5 transition-all" type="button">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-label-ui text-label-ui text-on-surface">Tomatoes</span>
+</button>
+<button class="flex-1 py-2 px-3 rounded-full text-on-surface-variant flex items-center justify-center gap-1.5 hover:text-on-surface transition-colors" type="button">
+<span class="w-2 h-2 rounded-full bg-outline-variant"></span>
+<span class="font-label-ui text-label-ui">Onions</span>
+</button>
+</div>
+<!-- Market Selector Bar -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-space-sm flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-2 min-w-0">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[18px] text-primary">storefront</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-sm text-on-surface-variant text-[11px] uppercase tracking-wider font-semibold">Tracked Market</span>
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Abba Gamaram (Maiduguri)</span>
+</div>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-primary hover:bg-surface-container transition-colors flex items-center gap-1 flex-shrink-0" type="button">
+<span class="font-label-ui text-label-ui">Change</span>
+<span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+</div>
+</section>
+<!-- Context Educational Card (Indigo Tinted) -->
+<section class="px-margin mt-space-md">
+<div class="w-full bg-surface-container-high rounded-xl p-space-md flex flex-col gap-space-xs shadow-sm">
+<div class="flex items-center justify-between pb-1">
+<div class="flex items-center gap-1.5 text-primary">
+<span class="material-symbols-outlined text-[18px]">info</span>
+<span class="font-headline-sm text-[14px] leading-tight text-on-surface">How to read this</span>
+</div>
+<span class="font-label-numeric-sm text-label-numeric-sm px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant">Guide</span>
+</div>
+<ul class="flex flex-col gap-1.5 font-body-sm text-on-surface-variant text-[12px] leading-relaxed">
+<li class="flex items-start gap-1.5">
+<span class="text-primary font-bold">•</span>
+<span><strong class="font-semibold text-on-surface">Range:</strong> Likely statistical spread across rolling confidence intervals.</span>
+</li>
+<li class="flex items-start gap-1.5">
+<span class="text-primary font-bold">•</span>
+<span><strong class="font-semibold text-on-surface">Reliability:</strong> Backtest error compared against naive baseline performance.</span>
+</li>
+<li class="flex items-start gap-1.5">
+<span class="text-primary font-bold">•</span>
+<span><strong class="font-semibold text-on-surface">Verified availability:</strong> Shown only when a model beats simple baselines; otherwise flagged as unavailable.</span>
+</li>
+</ul>
+</div>
+</section>
+<!-- Published Model Headline Card -->
+<section class="px-margin mt-space-md">
+<div class="w-full bg-surface-container-lowest rounded-xl p-space-md flex flex-col gap-space-md shadow-sm">
+<!-- Card Context Header -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-ui text-label-ui uppercase tracking-wide">Forecast</span>
+<span class="font-body-sm text-on-surface-variant font-medium">Tomatoes · Wholesale</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant font-label-numeric-sm text-label-numeric-sm">
+<span class="material-symbols-outlined text-[15px] text-primary">verified</span>
+<span>Validated</span>
+</div>
+</div>
+<!-- Price Target Display -->
+<div class="flex flex-col">
+<span class="font-body-sm text-on-surface-variant text-[13px]">Expected next price in Abba Gamaram</span>
+<div class="flex items-baseline gap-2 mt-0.5">
+<span class="font-headline-lg-mobile text-[34px] leading-tight font-bold text-on-surface tracking-tight">₦433.68</span>
+<span class="font-label-ui text-on-surface-variant uppercase tracking-wider text-[12px]">per kg</span>
+</div>
+</div>
+<!-- Visual Horizontal Range Bar -->
+<div class="flex flex-col gap-2 pt-1 pb-1">
+<div class="relative w-full h-3 rounded-full bg-surface-container-highest overflow-visible flex items-center">
+<!-- Gradient Fill Range Area -->
+<div class="absolute left-[10%] right-[10%] h-full rounded-full bg-gradient-to-r from-secondary-container/30 via-primary/40 to-secondary-container/40"></div>
+<!-- Expected Marker Pin (Proportionally centered ~50%) -->
+<div class="absolute left-1/2 -translate-x-1/2 flex flex-col items-center pointer-events-none">
+<span class="px-2 py-0.5 rounded-full bg-primary text-on-primary font-label-numeric-sm text-[10px] leading-none shadow-sm whitespace-nowrap mb-1">
+              Expected: ₦433.68
+            </span>
+<div class="w-3.5 h-3.5 rounded-full bg-surface-container-lowest shadow-md flex items-center justify-center">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+</div>
+</div>
+</div>
+<!-- Range Labels Min / Max -->
+<div class="flex items-center justify-between text-on-surface-variant font-label-numeric-sm text-label-numeric-sm pt-2">
+<div class="flex flex-col items-start">
+<span class="text-[10px] uppercase tracking-wider text-outline">Statistical Low</span>
+<span class="text-on-surface font-semibold">₦70.96</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-[10px] uppercase tracking-wider text-outline">Statistical High</span>
+<span class="text-on-surface font-semibold">₦796.40</span>
+</div>
+</div>
+</div>
+<!-- Reliability Pill Badge -->
+<div class="w-full bg-surface-container rounded-lg p-2.5 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary flex-shrink-0">analytics</span>
+<span class="font-label-ui text-[12px] leading-snug text-on-surface">
+          Backtest MAPE <strong class="text-primary">26%</strong> over 22 rolling origins — naive baseline <span class="text-on-surface-variant">35.1%</span>
+</span>
+</div>
+<!-- Metadata & Attributions -->
+<div class="flex items-center justify-between font-body-sm text-[11px] text-on-surface-variant pt-1">
+<span class="truncate">Model: Fourier seasonal + trend</span>
+<span class="flex-shrink-0 text-outline">WFP via HDX · CC BY-IGO</span>
+</div>
+<!-- Forecast Trust & Honesty Disclaimer -->
+<div class="rounded-xl bg-surface-container-low p-3 flex gap-2.5 items-start">
+<span class="material-symbols-outlined text-[18px] text-secondary flex-shrink-0 mt-0.5">shield</span>
+<p class="font-body-sm text-[12px] leading-relaxed text-on-surface-variant">
+<strong class="font-semibold text-on-surface">Statistical estimate:</strong> Derived strictly from verified historical patterns. Genuine operational shocks (fuel hikes, local insecurity, border closures) are not predictable. Decide your own purchase.
+        </p>
+</div>
+</div>
+</section>
+<!-- Model Validation & Evidence Section -->
+<section class="px-margin mt-space-lg flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Model Validation &amp; Evidence</h2>
+<p class="font-body-sm text-on-surface-variant text-[12px]">Backtested on history before it predicts</p>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-numeric-sm text-label-numeric-sm">22 Origins</span>
+</div>
+<!-- Historical Backtest Visual SVG Chart -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-2">
+<!-- Chart Legend Header -->
+<div class="flex items-center justify-between pb-1 text-[11px] font-label-ui">
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-1 rounded-full bg-primary"></span>
+<span class="text-on-surface">Actual Price</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-0.5 border-t border-dashed border-primary-container"></span>
+<span class="text-on-surface-variant">Predicted Model</span>
+</div>
+</div>
+<span class="font-label-numeric-sm text-on-surface-variant">₦ / kg</span>
+</div>
+<!-- Inline Lightweight SVG Line Chart -->
+<div class="w-full overflow-hidden">
+<svg class="w-full h-40 overflow-visible" fill="none" viewbox="0 0 320 140" xmlns="http://www.w3.org/2000/svg">
+<!-- Horizontal Grid Lines -->
+<line stroke="#dae2fd" stroke-dasharray="2 2" stroke-width="1" x1="28" x2="310" y1="20" y2="20"></line>
+<line stroke="#dae2fd" stroke-dasharray="2 2" stroke-width="1" x1="28" x2="310" y1="60" y2="60"></line>
+<line stroke="#dae2fd" stroke-dasharray="2 2" stroke-width="1" x1="28" x2="310" y1="100" y2="100"></line>
+<!-- Y-Axis Labels -->
+<text fill="#6f7a6f" font-family="JetBrains Mono" font-size="9" text-anchor="end" x="22" y="24">600</text>
+<text fill="#6f7a6f" font-family="JetBrains Mono" font-size="9" text-anchor="end" x="22" y="64">400</text>
+<text fill="#6f7a6f" font-family="JetBrains Mono" font-size="9" text-anchor="end" x="22" y="104">200</text>
+<!-- Predicted Model Series (Dashed Line) -->
+<path d="M 35 90 L 75 76 L 115 82 L 155 52 L 195 44 L 235 62 L 275 48 L 305 40" stroke="#16733d" stroke-dasharray="4 3" stroke-linecap="round" stroke-width="2"></path>
+<!-- Actual Series (Solid Line with Node Dots) -->
+<path d="M 35 95 L 75 72 L 115 86 L 155 48 L 195 42 L 235 68 L 275 44 L 305 38" stroke="#00592b" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+<!-- Data Points on Actuals -->
+<circle cx="35" cy="95" fill="#ffffff" r="3" stroke="#00592b" stroke-width="2"></circle>
+<circle cx="75" cy="72" fill="#ffffff" r="3" stroke="#00592b" stroke-width="2"></circle>
+<circle cx="115" cy="86" fill="#ffffff" r="3" stroke="#00592b" stroke-width="2"></circle>
+<circle cx="155" cy="48" fill="#ffffff" r="3" stroke="#00592b" stroke-width="2"></circle>
+<circle cx="195" cy="42" fill="#ffffff" r="3" stroke="#00592b" stroke-width="2"></circle>
+<circle cx="235" cy="68" fill="#ffffff" r="3" stroke="#00592b" stroke-width="2"></circle>
+<circle cx="275" cy="44" fill="#ffffff" r="3" stroke="#00592b" stroke-width="2"></circle>
+<circle cx="305" cy="38" fill="#ffffff" r="3" stroke="#00592b" stroke-width="2"></circle>
+<!-- X-Axis Labels -->
+<text fill="#6f7a6f" font-family="Inter" font-size="9" text-anchor="middle" x="35" y="125">Jun</text>
+<text fill="#6f7a6f" font-family="Inter" font-size="9" text-anchor="middle" x="75" y="125">Jul</text>
+<text fill="#6f7a6f" font-family="Inter" font-size="9" text-anchor="middle" x="115" y="125">Aug</text>
+<text fill="#6f7a6f" font-family="Inter" font-size="9" text-anchor="middle" x="155" y="125">Sep</text>
+<text fill="#6f7a6f" font-family="Inter" font-size="9" text-anchor="middle" x="195" y="125">Oct</text>
+<text fill="#6f7a6f" font-family="Inter" font-size="9" text-anchor="middle" x="235" y="125">Nov</text>
+<text fill="#6f7a6f" font-family="Inter" font-size="9" text-anchor="middle" x="275" y="125">Dec</text>
+<text fill="#00592b" font-family="Inter" font-size="9" font-weight="bold" text-anchor="middle" x="305" y="125">Now</text>
+</svg>
+</div>
+</div>
+<!-- Backtest Benchmark Performance Ledger -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-2">
+<div class="flex items-center justify-between pb-1">
+<span class="font-headline-sm text-[13px] font-semibold text-on-surface">Benchmark Evaluation Ledger</span>
+<span class="font-label-ui text-label-ui text-on-surface-variant">Ranked by MAPE</span>
+</div>
+<!-- Ledger Table -->
+<div class="w-full flex flex-col gap-1.5 pt-1">
+<!-- Row 1: Winner Model -->
+<div class="w-full bg-surface-container rounded-lg p-2.5 flex items-center justify-between">
+<div class="flex flex-col min-w-0 pr-2">
+<div class="flex items-center gap-1.5">
+<span class="font-label-ui text-label-ui text-on-surface font-semibold truncate">Fourier seasonal + trend (2h)</span>
+<span class="flex-shrink-0 px-1.5 py-0.5 rounded-full bg-primary text-on-primary font-label-ui text-[9px] uppercase tracking-wider flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[10px]">check</span> Winner
+              </span>
+</div>
+<span class="font-body-sm text-[11px] text-on-surface-variant mt-0.5">MAE: ₦112.80</span>
+</div>
+<div class="text-right flex-shrink-0">
+<span class="font-label-numeric-md text-label-numeric-md text-primary font-bold">26.0%</span>
+<span class="block font-label-numeric-sm text-[10px] text-on-surface-variant">MAPE</span>
+</div>
+</div>
+<!-- Row 2: Baseline MA -->
+<div class="w-full bg-surface-container-lowest hover:bg-surface-container-low rounded-lg p-2 flex items-center justify-between transition-colors">
+<div class="flex flex-col min-w-0 pr-2">
+<div class="flex items-center gap-1.5">
+<span class="font-label-ui text-label-ui text-on-surface-variant truncate">Moving Average (8-wk)</span>
+<span class="flex-shrink-0 px-1.5 py-0.2 rounded bg-surface-container-high text-on-surface-variant font-label-ui text-[9px] uppercase">Baseline</span>
+</div>
+<span class="font-body-sm text-[11px] text-outline mt-0.5">MAE: ₦129.40</span>
+</div>
+<div class="text-right flex-shrink-0">
+<span class="font-label-numeric-md text-label-numeric-md text-on-surface">29.8%</span>
+<span class="block font-label-numeric-sm text-[10px] text-outline">MAPE</span>
+</div>
+</div>
+<!-- Row 3: Baseline Seasonal Naive -->
+<div class="w-full bg-surface-container-lowest hover:bg-surface-container-low rounded-lg p-2 flex items-center justify-between transition-colors">
+<div class="flex flex-col min-w-0 pr-2">
+<div class="flex items-center gap-1.5">
+<span class="font-label-ui text-label-ui text-on-surface-variant truncate">Seasonal Naive (52-wk)</span>
+<span class="flex-shrink-0 px-1.5 py-0.2 rounded bg-surface-container-high text-on-surface-variant font-label-ui text-[9px] uppercase">Baseline</span>
+</div>
+<span class="font-body-sm text-[11px] text-outline mt-0.5">MAE: ₦136.10</span>
+</div>
+<div class="text-right flex-shrink-0">
+<span class="font-label-numeric-md text-label-numeric-md text-on-surface">31.4%</span>
+<span class="block font-label-numeric-sm text-[10px] text-outline">MAPE</span>
+</div>
+</div>
+<!-- Row 4: Naive Baseline -->
+<div class="w-full bg-surface-container-lowest hover:bg-surface-container-low rounded-lg p-2 flex items-center justify-between transition-colors">
+<div class="flex flex-col min-w-0 pr-2">
+<div class="flex items-center gap-1.5">
+<span class="font-label-ui text-label-ui text-on-surface-variant truncate">Naive (Last observation)</span>
+<span class="flex-shrink-0 px-1.5 py-0.2 rounded bg-surface-container-high text-on-surface-variant font-label-ui text-[9px] uppercase">Baseline</span>
+</div>
+<span class="font-body-sm text-[11px] text-outline mt-0.5">MAE: ₦152.20</span>
+</div>
+<div class="text-right flex-shrink-0">
+<span class="font-label-numeric-md text-label-numeric-md text-on-surface">35.1%</span>
+<span class="block font-label-numeric-sm text-[10px] text-outline">MAPE</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Quick Audit Trigger -->
+<section class="px-margin mt-space-md">
+<button class="w-full py-3 px-4 rounded-xl bg-surface-container-high hover:bg-surface-container transition-colors flex items-center justify-between text-left" type="button">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[20px] text-primary">download</span>
+<div class="flex flex-col">
+<span class="font-label-ui text-label-ui text-on-surface">Download Validation Audit Log</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">CSV payload with historical residuals</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">chevron_right</span>
+</button>
+</section>
+</div></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.05)]" data-active-classes="text-primary font-semibold"><div class="grid grid-cols-4 items-center h-16 px-space-xs max-w-md mx-auto"><a class="flex flex-col items-center justify-center gap-0.5 min-w-[44px] min-h-[44px] text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="prices" href="#"><span class="material-symbols-outlined text-[22px]">sell</span><span class="font-label-ui text-label-ui">Prices</span></a><a aria-current="page" class="flex flex-col items-center justify-center gap-0.5 min-w-[44px] min-h-[44px] transition-colors py-1 relative text-primary font-semibold" data-path="forecast" href="#"><span class="absolute top-0.5 w-6 h-1 rounded-full bg-primary"></span><span class="material-symbols-outlined text-[22px] text-primary">trending_up</span><span class="font-label-ui text-label-ui text-primary font-semibold">Forecast</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[44px] min-h-[44px] text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="compare" href="#"><span class="material-symbols-outlined text-[22px]">balance</span><span class="font-label-ui text-label-ui">Compare</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[44px] min-h-[44px] text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="sources" href="#"><span class="material-symbols-outlined text-[22px]">verified_user</span><span class="font-label-ui text-label-ui">Sources</span></a></div></nav></body></html>

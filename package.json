@@ -1,0 +1,15 @@
+{
+  "name": "produceprice",
+  "private": true,
+  "version": "0.1.0",
+  "description": "ProducePrice Intelligence — tomato & onion market price platform and predictor for Nigeria",
+  "packageManager": "pnpm@9.15.0",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "pnpm -r build",
+    "test": "pnpm -r test",
+    "dev": "pnpm -r --parallel dev"
+  }
+}

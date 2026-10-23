@@ -53,6 +53,7 @@ Review when  — the trigger to revisit
 | 019 | Capstone sprint scope and single-client rule | Proposed |
 | 020 | Global-ready data model (country, currency, locale as data) | Proposed |
 | 021 | Forecast-first positioning; backtest-based sprint demo | Accepted |
+| 022 | PWA-first single client (Next.js public web + minimal console) | Accepted |
 
 ---
 
@@ -213,6 +214,15 @@ Review when  — the trigger to revisit
 **Alternatives:** Keep forecasts deferred to Phase 6 only; ship a hardcoded "pretend" forecast (rejected — violates AIG rules and the honesty guardrails); waiter-only approach relying on reporter-collected history.
 **Consequences:** The sprint gains a working predictor demo with evidence that the model beats naive baselines; schema must populate `pricePerKgMinor` at ingestion for backtest data; Phase 6 shortens to publication hardening; risk of over-promising accuracy is mitigated by always displaying ranges, reliability badges and typical error bands.
 **Review when:** Historical dataset proves too sparse for a pilot pair, or backtest metrics fail to beat baselines — in which case the "Not available yet" state remains the honest fallback for live release.
+
+## ADR-022 — PWA-first single client (Next.js public web)
+**Status:** Accepted · 23 Oct 2026
+**Supersedes:** ADR-019's "client undecided" state — user decision. Satisfies the PWA requirement open since ADR-007.
+**Context:** The PRD required PWA-installable web from day one; the single-client rule deferred choosing. The core product (price reads, comparison, gated backtest) is functional behind the API and must be observable before Expo or bot surfaces exist.
+**Decision:** The one Tier-S client is a **Next.js PWA** (public price web + minimal admin page later): installable manifest, service-worker offline shell for last-seen prices, text-first, low-bandwidth. Runs on port **5100** locally (4000 API; 3000/3001 occupied by other local apps). UI designed in Stitch (Google), exported as design + code, wired to the real API — never fetched fake data. Expo app and Telegram bot remain Tier P/G.
+**Alternatives:** Expo app first (heavier scaffold, app-store friction in a demo window); bot first (no rich forecast panel); separate repo (rejected — monorepo, ADR-001).
+**Consequences:** Fulfils the PWA requirement; offline story = cached last-seen data + stale badges; forecast panel can render backtest evidence richly (charts) better than chat; console (FR-C1..6) shares the same Next.js app behind an admin route.
+**Review when:** The Expo app is built in Tier P (it becomes the mobile-native complement, this PWA remains the public web).
 
 ---
 

@@ -45,6 +45,7 @@ This is a **living document set**. To stop it rotting:
 | 2.0 | 22 Oct 2026 | Personas, journeys, workflows, automation, data/forecast gate, phased plan, assistant rules |
 | **3.0** | 22 Oct 2026 | **Stack change**: TypeScript monorepo, Express + Prisma, Better Auth (email OTP via Gmail provider chain), Expo app, Next.js console, grammY bot, Groq chatbot, Paystack, Cloudflare Tunnel, local-first SQLite. **Scope tiers S/P/G** introduced. **NDPA privacy** (§8) and **AI governance** (§9) made binding requirements. Global-ready data model (§7). Capstone deadline reality reflected (Tier S). |
 | **3.1** | 23 Oct 2026 | **Forecast-first repositioning (ADR-021)**: the market price predictor is the headline capability, not a deferred feature. Forecast engine (baselines + rolling-origin backtest on historical open data, e.g., WFP market price series on HDX) moved into Tier S as a backtested prototype. Release gate (§5.6) unchanged; live publication still gated. Two-brain data architecture: historical open data trains the predictor; the reporter network keeps the latest prices fresh (§7.1). |
+| **3.2** | 23 Oct 2026 | **Single-client decision (ADR-022)**: Tier S client = **Next.js PWA** (installable, offline last-seen shell, text-first). Satisfies the long-open PWA requirement (§14 Q3). Expo app and Telegram bot move explicitly to Tier P/G. UI designed in Stitch (Google) and wired to the real API — no mock data in the shipped client. |
 
 ### 0.2 Stack changes vs. v2.0 (summary; reasons in ADRs)
 
@@ -115,11 +116,8 @@ It is reachable through an **Expo app**, a **Telegram bot**, a **Next.js web/con
 | Multi-country / multi-currency operation | schema only | schema | ✔ |
 | Additional channels (WhatsApp, SMS/USSD) | — | — | ✔ |
 
-### 2.1 The single-client rule for the sprint
-Building both the Expo app and the Next.js console inside one day is a schedule risk. **Rule:** the assigned brief decides the *one* client shipped in Tier S.
-- Brief demands mobile → Expo is the client; console deferred.
-- Brief is web/dashboard-oriented or silent → Next.js is the client (public view + minimal admin page); Expo deferred.
-Record the decision in ADR-019.
+### 2.1 The single-client rule for the sprint — RESOLVED (ADR-022)
+The Tier S client is a **Next.js PWA** (public price view + minimal admin page). Expo deferred (Tier P).
 
 ---
 

@@ -1,0 +1,196 @@
+// ProducePrice Prisma schema — SQLite-compatible by design (ADR-003):
+// no scalar lists, no provider-specific types, enums as validated strings,
+// money as INTEGER minor units (ADR-018), JSON as text where needed.
+// Global-ready: Country/Currency/Locale are data, not code (ADR-020).
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "./generated/client"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Country {
+  id            String   @id
+  code          String   @unique // ISO 3166-1 alpha-2 (lowercase)
+  name          String
+  currencyCode  String // ISO 4217
+  timezone      String // IANA identifier
+  privacyRegime String? // e.g. "NDPA 2023"
+  Market Market[]
+}
+
+model Market {
+  id         String @id
+  name       String
+  state      String?
+  countryId  String
+  isPilot    Boolean @default(false)
+  country    Country @relation(fields: [countryId], references: [id])
+  Observation Observation[]
+  ForecastGate ForecastGate[]
+  Report     Report[]
+
+  @@index([countryId])
+}
+
+model Commodity {
+  id          String @id
+  slug        String @unique
+  name        String
+  Unit        Unit[]
+  Observation Observation[]
+  ForecastGate ForecastGate[]
+
+  @@index([slug])
+}
+
+model Unit {
+  id           String  @id
+  commodityId  String
+  name         String
+  aliases      String // comma-separated for SQLite; parse in domain logic
+  kgEquivalent Float? // kg per single unit; null = cannot weigh
+  kgBasisNote  String? // REQUIRED in docs when status = "validated"
+  status       String // unvalidated | validated
+  countryId    String? // null = applies country-wide
+  commodity    Commodity @relation(fields: [commodityId], references: [id])
+  Observations Observation[]
+
+  @@index([commodityId, status])
+}
+
+model Source {
+  id              String  @id
+  name            String
+  owner           String?
+  url             String?
+  licence         String?
+  frequency       String? // e.g. weekly, monthly
+  validationStatus String // registered | validated | demonstration
+  attributionText String?
+  Observation     Observation[]
+
+  @@index([name])
+}
+
+// Appendix-only observations (ADR-012: append-only, corrections supersede)
+model Observation {
+  id           String   @id
+  commodityId  String
+  marketId     String
+  sourceId     String
+  priceMinor   Int // integer minor units (kobo) — original price as reported
+  currencyCode String
+  unitId       String
+  priceType    String // wholesale | retail | unknown
+  observedAt   DateTime
+  ingestedAt   DateTime @default(now())
+  trustLabel   String // verified_report | official_statistic | estimated | unverified
+  // Derived — nullable, never overwrites the original (ADR-012/018):
+  pricePerKgMinor        Int?
+  normalisationMethod    String? // e.g. validated_unit_conversion:x.y.z
+  supersedesId           String?
+  isCurrent              Boolean @default(true)
+
+  commodity Commodity @relation(fields: [commodityId], references: [id])
+  market    Market    @relation(fields: [marketId], references: [id])
+  source    Source    @relation(fields: [sourceId], references: [id])
+  unit      Unit      @relation(fields: [unitId], references: [id])
+
+  @@index([commodityId, marketId, observedAt])
+  @@index([marketId, commodityId, isCurrent])
+}
+
+model Report {
+  id             String   @id
+  reporterId     String
+  idempotencyKey String   @unique
+  // Same fields as Observation (mirrored so reports are reviewable pre-publish):
+  commodityId  String
+  marketId     String
+  priceMinor   Int
+  currencyCode String
+  unitId       String
+  priceType    String
+  observedAt   DateTime
+  status       String // Submitted | Auto-checked | Needs review | Verified | Rejected
+  statusReason String?
+  channel      String // telegram | expo | web
+  submittedAt  DateTime @default(now())
+
+  market Market @relation(fields: [marketId], references: [id])
+
+  @@index([reporterId, submittedAt])
+  @@index([status])
+}
+
+model ConsentRecord {
+  id      String   @id
+  userId  String
+  scope   String // privacy_notice | service_notifications | marketing | assistant | photo_evidence
+  version String
+  granted Boolean
+  at      DateTime @default(now())
+
+  @@index([userId, scope])
+}
+
+model AuditLog {
+  id       String   @id
+  actorId  String?
+  action   String
+  entity   String
+  entityId String?
+  at       DateTime @default(now())
+
+  @@index([entity, at])
+}
+
+model AssistantMessage {
+  id              String   @id
+  conversationId  String
+  role            String // user | assistant | tool
+  content         String
+  toolCalls       String? // JSON text — schema fixed and read-only (AIG-04/13)
+  verifierOutcome String? // pass | regenerated | fallback | n_a
+  feedback        String? // thumbs_up | thumbs_down | reason text
+  createdAt       DateTime @default(now())
+
+  @@index([conversationId, createdAt])
+}
+
+model ForecastGate {
+  id          String   @id
+  commodityId String
+  marketId    String
+  horizonDays Int
+  status      String // ineligible | candidate | approved | withheld | suspended
+  reason      String?
+  decidedBy   String? // admin user id — human decision required (FR-F4)
+  decidedAt   DateTime?
+  backtestMape Float? // engine evidence vs baselines (ADR-021)
+
+  commodity Commodity @relation(fields: [commodityId], references: [id])
+  market    Market    @relation(fields: [marketId], references: [id])
+
+  @@unique([commodityId, marketId, horizonDays])
+  @@index([status])
+}
+
+// Job scheduler abstraction (ADR-017): JobRun rows for in-process dev scheduler.
+model JobRun {
+  id        String    @id
+  name      String // aut_01..aut_14 slug
+  startedAt DateTime
+  endedAt   DateTime?
+  status    String // ok | failed | running
+  detail    String?
+
+  @@index([name, startedAt])
+}
+
+// Better Auth tables are generated by its CLI/adapter flow [VERIFY docs]

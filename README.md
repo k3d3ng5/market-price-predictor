@@ -1,83 +1,113 @@
 # Tomionce
 
-Market **price intelligence and predictor** for tomatoes and onions in Nigeria: verified,
-unit-normalised price records, market comparison, and **backtested forecasts** published only
-when they beat naive baselines on held-out data.
+**Know the price. Trust the number. See what comes next.**
 
-*Architecture stays internal as "ProducePrice"; "Tomionce" is the public brand (TOMato + ONion,
-one trusted engine). Tomato and onion are predicted **separately** — one model per commodity ×
-market pair — by the same execution engine. They are never traded/modelled as one "pair asset".*
+Tomionce is a tomato and onion price intelligence service for Nigeria. It records market
+prices with their source, unit and date; normalises them so markets can be compared fairly;
+and publishes a forecast only when it has passed an evidence test.
 
-> Status: early build. Requirements live in [`01_PRD_ProducePrice_v3.0.md`](01_PRD_ProducePrice_v3.0.md),
-> schedule in [`02_Implementation_Plan_v1.0.md`](02_Implementation_Plan_v1.0.md),
-> decisions in [`03_ADR_Log.md`](03_ADR_Log.md).
+> **Version 0.1.0** — closed for this cycle. See [`CHANGELOG.md`](CHANGELOG.md) and
+> [`HANDOVER.md`](HANDOVER.md).
 
-## Stack
+---
 
-TypeScript monorepo (pnpm workspaces) · Express API · Prisma (SQLite dev → PostgreSQL prod) ·
-Next.js PWA client (`apps/web`) · rolling-origin backtested forecast engine (ADR-021).
-Planned from the ADRs: Better Auth email OTP, Telegram bot, grounded assistant.
+## The problem
 
-## Repo structure
+In Nigerian produce markets, prices are real but price *information* is weak. One trader
+quotes a basket, another a bag, a third half a bag. The unit changes, the date is guessed,
+and the source is often a rumour. Buyers overpay, sellers underprice, and forecasts sound
+confident without showing their work.
 
-```
-Market Price Predictor/
-├─ apps/
-│  ├─ api/            # Express API on :4000 (prices, catalog, sources, forecasts)
-│  └─ web/            # Next.js PWA on :5100 (prices, forecast, compare, sources)
-├─ packages/
-│  ├─ domain/         # pure functions: units, trust labels, freshness, comparison, eligibility, forecasts
-│  └─ db/             # Prisma schema, migrations, demo seed, WFP ingestion
-├─ designs/           # 11 Stitch HTML exports used as UI reference
-├─ data/              # raw source CSVs (git-ignored, reproducible from HDX)
-├─ 01_PRD_ProducePrice_v3.0.md
-├─ 02_Implementation_Plan_v1.0.md
-└─ 03_ADR_Log.md
-```
+The problem is not a lack of opinions. It is a lack of evidence.
 
-## Core rules (see ADRs 012/018/021)
+## What Tomionce does
 
-- Observations are append-only; corrections supersede, never overwrite.
-- Original price **and** unit always stored; `price_per_kg` is derived and nullable.
-- Money as integer minor units (kobo) — no floating-point money.
-- Cross-unit comparison requires a validated conversion, otherwise "not comparable — reason".
-- Every forecast is displayed with its backtest evidence vs. naive baselines; live publication is gated.
+### 1. Records the price
 
-## Setup
+Every observation keeps the original price **and** the unit it was reported in, the market,
+the date, the source and a trust label. Nothing is silently rounded into a fake “live” price.
 
-```bash
-pnpm install
-cp .env.example .env   # fill in names — never commit values
+### 2. Makes markets comparable
 
-# API on http://localhost:4000
-pnpm --filter @produceprice/api start
+Prices are converted to a common per-kilogram basis only when a validated conversion exists.
+If the conversion is not proven, the app says **not comparable** rather than forcing a number.
+Tomato and onion are treated as separate commodities, never blended into one figure.
 
-# PWA on http://localhost:5100
-cd apps/web && pnpm dev
-```
+### 3. Earns the forecast
 
-The web client proxies `/api/*` to the API on port 4000, so open
-**http://localhost:5100** (not 4000) in the browser. See
-[`apps/web/README.md`](apps/web/README.md) for the PWA/offline notes and the
-npm shim workaround used on this machine.
+A forecast is a privilege, not a default. The engine is tested against simple benchmarks on
+held-out history. A range appears only when the challenger beats the benchmark. If it loses,
+the screen says **not published** and explains why. Forecasts are ranges for the next reporting
+periods, not promises about tomorrow.
 
-```bash
-pnpm test                                  # domain + engine unit tests
-pnpm --filter @produceprice/db db:seed     # demo markets (synthetic, labelled)
-pnpm --filter @produceprice/db ingest:wfp  # real WFP Nigeria series from HDX
-```
+### 4. Shows the receipts
 
-## Data honesty rules (enforced in code, not copy)
+The Sources screen lists the dataset, licence, coverage counts and freshness window. Every price
+carries its observation date and trust badge. Demonstration data is clearly labelled as synthetic.
 
+### 5. Works on the phone in hand
+
+Tomionce is an installable web app. It is designed for a low-cost Android phone and a weak
+connection. Previously loaded pages and prices remain visible offline, with their original dates.
+
+## Data and trust
+
+- Core dataset: **WFP Nigeria Food Prices**, published through **HDX** under a
+  **CC BY-IGO** licence.
+- Current coverage: **4,182 real observations across 51 markets**, plus **312 clearly labelled
+  demonstration observations** in two pilot markets.
+- Tomato and onion coverage is counted separately.
+- Prices older than **7 days** are badged **stale**, with the date shown.
 - A missing price is `null`, never `0` and never “live”.
-- Every price carries unit, source, observation date and trust label.
-- Per-kg values exist only when a validated unit conversion applies.
-- Forecast ranges publish only when the model beats a naive baseline on
-  rolling-origin held-out data; otherwise the API says why.
-- Demonstration rows are labelled on the price, the picker, the comparison and
-  the sources page.
+- No invented percentages, freshness claims, source counts, transport costs or arbitrage profits.
+- Forecast publication is gated by backtest evidence against simple do-nothing benchmarks.
 
-## AI assistance disclosure
+## Who it is for
 
-Parts of this codebase were built with AI assistance (pair-programming), as required for
-capstone disclosure. Architecture decisions, product requirements and final review are human.
+The first user is the person who pays for the tomato: a shopper, a trader, a farmer or a small
+restaurant. The second ring is cooperatives, market associations, NGOs, researchers and
+policymakers who need a defensible price reference.
+
+## Using Tomionce
+
+The beginner walkthrough is in [`USER_GUIDE.md`](USER_GUIDE.md). The current demo build runs
+locally at **http://localhost:5100**.
+
+## Product status
+
+**v0.1.0 is closed.** The product includes recorded prices, market comparison, the gated forecast,
+source receipts, a beginner guide, and installable/offline behaviour. The next cycle is described
+in [`ROADMAP.md`](ROADMAP.md).
+
+## Ownership and confidentiality
+
+Tomionce is a founder-owned product. The brand, product design, strategy, forecasting model and
+execution engine are proprietary. The source code and internal engineering documentation are
+maintained privately and are not licensed for reuse, redistribution or reverse engineering
+without written permission.
+
+The data remains subject to the licence of its original publisher. See [`NOTICE.md`](NOTICE.md).
+
+## Documentation
+
+| Document | Purpose |
+| --- | --- |
+| [`USER_GUIDE.md`](USER_GUIDE.md) | A plain-language walkthrough for first-time users |
+| [`FOUNDER_DEMO_GUIDE.md`](FOUNDER_DEMO_GUIDE.md) | Founder narrative, demo script and talking points |
+| [`HANDOVER.md`](HANDOVER.md) | Formal project handover, ownership and acceptance |
+| [`CHANGELOG.md`](CHANGELOG.md) | What shipped in v0.1.0 and what is known |
+| [`ROADMAP.md`](ROADMAP.md) | High-level themes for the next versions |
+| [`NOTICE.md`](NOTICE.md) | Data attribution and proprietary notice |
+
+Internal engineering, model and operations notes are held in `docs/internal/` and are
+**confidential**. They are not part of the public product documentation.
+
+## Data acknowledgement
+
+WFP Nigeria Food Prices, distributed by the Humanitarian Data Exchange (HDX). The dataset is
+used under its published CC BY-IGO licence. Tomionce is an independent product and is not
+endorsed by WFP or HDX.
+
+---
+
+**Tomionce** — TOMato + ONion, one trusted engine.

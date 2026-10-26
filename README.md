@@ -1,8 +1,8 @@
-# Tomionce
+# Tomionce - Market Price Predictor
 
 **Know the price. Trust the number. See what comes next.**
 
-Tomionce is a tomato and onion price intelligence service for Nigeria. It records market
+Tomionce is a tomato and onion price intelligence service for Nigeria. It records and predicts market
 prices with their source, unit and date; normalises them so markets can be compared fairly;
 and publishes a forecast only when it has passed an evidence test.
 
